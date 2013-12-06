@@ -1,5 +1,7 @@
 #include <msp430.h> 
 #include "nav.h"
+#include "sensor.h"
+#include "robotMovement.h"
 
 /*
  * main.c
