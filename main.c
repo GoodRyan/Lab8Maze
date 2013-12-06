@@ -20,7 +20,12 @@ int main(void) {
 
     while(1){
     	leftSensorReading = checkLeftSensor();
-    	if (leftSensorReading > leftSensorTooClose){
+    	frontSensorReading = checkFrontSensor();
+    	if(frontSensorReading > frontSensorWallPresent){
+    		turnRobotRight();
+    		_delay_cycles(350000);
+    	}
+    	else if (leftSensorReading > leftSensorTooClose){
     		turnRobotRight();
     	}
     	else if(leftSensorReading < leftSensorTooFar){
