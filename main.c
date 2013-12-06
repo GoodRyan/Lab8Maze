@@ -32,7 +32,7 @@ int main(void) {
     		turnRobotLeft();
     	}
     	else{
-    		_delay_cycles(50000);
+    		_delay_cycles(20000);
     		moveRobotForward();
     	}
 
