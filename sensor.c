@@ -1,10 +1,5 @@
 #include "sensor.h"
 
-void initializeLedPins(){
-	P1DIR |= BIT0;
-	P1DIR |= BIT6;
-}
-
 void initializeADC10(){
     ADC10CTL0 = ADC10SHT_3 + ADC10ON + ADC10IE;
     ADC10CTL1 |= ADC10SSEL1|ADC10SSEL0;

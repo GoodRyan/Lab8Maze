@@ -2,8 +2,6 @@
 #define _sensor_h
 #include <msp430.h>
 
-void initializeLedPins();
-
 void initializeADC10();
 
 unsigned int checkLeftSensor();
