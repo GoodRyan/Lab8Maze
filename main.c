@@ -16,7 +16,7 @@ int main(void) {
     initializeADC10();
 
     unsigned int leftSensorReading = checkLeftSensor(), frontSensorReading = checkFrontSensor();
-    unsigned int leftSensorTooClose = 0x27c, leftSensorTooFar = 0x1c0, frontSensorWallPresent = 0x320;
+    unsigned int leftSensorTooClose = 0x27c, leftSensorTooFar = 0x1c0, frontSensorWallPresent = 0x2F0;
 
     while(1){
     	leftSensorReading = checkLeftSensor();
@@ -32,7 +32,7 @@ int main(void) {
     		turnRobotLeft();
     	}
     	else{
-    		_delay_cycles(100000);
+    		_delay_cycles(50000);
     		moveRobotForward();
     	}
 
