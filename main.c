@@ -16,14 +16,13 @@ int main(void) {
     initializeADC10();
 
     unsigned int leftSensorReading = checkLeftSensor(), frontSensorReading = checkFrontSensor();
-    unsigned int leftSensorTooClose = 0x27c, leftSensorTooFar = 0x1c0, frontSensorWallPresent = 0x2F0;
+    unsigned int leftSensorTooClose = 0x28c, leftSensorTooFar = 0x1d5, frontSensorWallPresent = 0x2a5;
 
     while(1){
     	leftSensorReading = checkLeftSensor();
     	frontSensorReading = checkFrontSensor();
     	if(frontSensorReading > frontSensorWallPresent){
     		turnRobotRight();
-    		_delay_cycles(350000);
     	}
     	else if (leftSensorReading > leftSensorTooClose){
     		turnRobotRight();
@@ -32,7 +31,6 @@ int main(void) {
     		turnRobotLeft();
     	}
     	else{
-    		_delay_cycles(20000);
     		moveRobotForward();
     	}
 
